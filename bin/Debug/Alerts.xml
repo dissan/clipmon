@@ -6,17 +6,17 @@
     <Text>Looks like a ClickUp issue</Text>
     <Url>clickup://app.clickup.com/t/</Url>
     <ClipRegex>^#?[a-zA-Z0-9]{5,7}$</ClipRegex>
-    <Img>D:\Work\clipmon\bin\Debug\imgs\clikcup.png</Img>
+    <Img>\imgs\clikcup.png</Img>
     <Color>-8388353</Color>
     <RemoveString>#</RemoveString>
   </ClipAlert>
   <ClipAlert>
-    <Id>a861b719-98b5-40fd-9748-f43c24066f98</Id>
+    <Id>8d07c8ee-d136-4b51-b3b2-4e2ed706e2f2</Id>
     <Title>Helpdesk</Title>
     <Text>Looks like a helpdesk ticket</Text>
-    <Url>https://helpdesk.itsecurity.dk/Ticket/</Url>
     <ClipRegex>^1?[0-9]{7}$</ClipRegex>
-    <Img>D:\Work\clipmon\bin\Debug\imgs\its.png</Img>
+    <Img>\imgs\its.png</Img>
     <Color>-8388608</Color>
+    <RemoveString />
   </ClipAlert>
 </ArrayOfClipAlert>

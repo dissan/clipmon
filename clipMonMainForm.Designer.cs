@@ -58,6 +58,7 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblSan = new System.Windows.Forms.Label();
             this.txtSan = new System.Windows.Forms.TextBox();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -94,29 +95,29 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(295, 33);
+            this.txtTitle.Location = new System.Drawing.Point(351, 33);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(208, 20);
+            this.txtTitle.Size = new System.Drawing.Size(210, 20);
             this.txtTitle.TabIndex = 2;
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(295, 76);
+            this.txtUrl.Location = new System.Drawing.Point(351, 76);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(208, 20);
+            this.txtUrl.Size = new System.Drawing.Size(210, 20);
             this.txtUrl.TabIndex = 3;
             // 
             // txtText
             // 
-            this.txtText.Location = new System.Drawing.Point(295, 114);
+            this.txtText.Location = new System.Drawing.Point(351, 114);
             this.txtText.Name = "txtText";
-            this.txtText.Size = new System.Drawing.Size(208, 20);
+            this.txtText.Size = new System.Drawing.Size(210, 20);
             this.txtText.TabIndex = 4;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(295, 12);
+            this.lblName.Location = new System.Drawing.Point(351, 12);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(36, 13);
             this.lblName.TabIndex = 5;
@@ -125,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 58);
+            this.label1.Location = new System.Drawing.Point(351, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(23, 13);
             this.label1.TabIndex = 6;
@@ -133,15 +134,15 @@
             // 
             // txtRegex
             // 
-            this.txtRegex.Location = new System.Drawing.Point(295, 151);
+            this.txtRegex.Location = new System.Drawing.Point(351, 151);
             this.txtRegex.Name = "txtRegex";
-            this.txtRegex.Size = new System.Drawing.Size(208, 20);
+            this.txtRegex.Size = new System.Drawing.Size(210, 20);
             this.txtRegex.TabIndex = 7;
             // 
             // lblText
             // 
             this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(295, 99);
+            this.lblText.Location = new System.Drawing.Point(351, 99);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(31, 13);
             this.lblText.TabIndex = 8;
@@ -150,7 +151,7 @@
             // lblRegex
             // 
             this.lblRegex.AutoSize = true;
-            this.lblRegex.Location = new System.Drawing.Point(295, 137);
+            this.lblRegex.Location = new System.Drawing.Point(351, 137);
             this.lblRegex.Name = "lblRegex";
             this.lblRegex.Size = new System.Drawing.Size(41, 13);
             this.lblRegex.TabIndex = 9;
@@ -159,7 +160,7 @@
             // lblBG
             // 
             this.lblBG.AutoSize = true;
-            this.lblBG.Location = new System.Drawing.Point(224, 81);
+            this.lblBG.Location = new System.Drawing.Point(280, 81);
             this.lblBG.Name = "lblBG";
             this.lblBG.Size = new System.Drawing.Size(52, 13);
             this.lblBG.TabIndex = 10;
@@ -169,10 +170,10 @@
             // 
             this.txtBG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBG.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.txtBG.Location = new System.Drawing.Point(227, 97);
+            this.txtBG.Location = new System.Drawing.Point(283, 97);
             this.txtBG.Name = "txtBG";
             this.txtBG.ReadOnly = true;
-            this.txtBG.Size = new System.Drawing.Size(49, 13);
+            this.txtBG.Size = new System.Drawing.Size(51, 13);
             this.txtBG.TabIndex = 11;
             this.txtBG.Click += new System.EventHandler(this.txtBG_Click);
             // 
@@ -183,9 +184,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(518, 148);
+            this.btnSave.Location = new System.Drawing.Point(575, 186);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 23);
+            this.btnSave.Size = new System.Drawing.Size(44, 23);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Gem";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -193,9 +194,9 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(518, 12);
+            this.btnNew.Location = new System.Drawing.Point(218, 12);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(112, 23);
+            this.btnNew.Size = new System.Drawing.Size(36, 23);
             this.btnNew.TabIndex = 13;
             this.btnNew.Text = "Ny";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -204,9 +205,9 @@
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(518, 41);
+            this.btnDelete.Location = new System.Drawing.Point(218, 41);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(112, 23);
+            this.btnDelete.Size = new System.Drawing.Size(44, 23);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Slet";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -246,9 +247,9 @@
             // pbImage
             // 
             this.pbImage.Image = global::clipmon.Properties.Resources.clickup;
-            this.pbImage.Location = new System.Drawing.Point(223, 12);
+            this.pbImage.Location = new System.Drawing.Point(279, 12);
             this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(65, 62);
+            this.pbImage.Size = new System.Drawing.Size(67, 62);
             this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbImage.TabIndex = 1;
             this.pbImage.TabStop = false;
@@ -257,7 +258,7 @@
             // lblSan
             // 
             this.lblSan.AutoSize = true;
-            this.lblSan.Location = new System.Drawing.Point(294, 175);
+            this.lblSan.Location = new System.Drawing.Point(350, 175);
             this.lblSan.Name = "lblSan";
             this.lblSan.Size = new System.Drawing.Size(47, 13);
             this.lblSan.TabIndex = 16;
@@ -265,17 +266,28 @@
             // 
             // txtSan
             // 
-            this.txtSan.Location = new System.Drawing.Point(294, 189);
+            this.txtSan.Location = new System.Drawing.Point(350, 189);
             this.txtSan.Name = "txtSan";
-            this.txtSan.Size = new System.Drawing.Size(208, 20);
+            this.txtSan.Size = new System.Drawing.Size(210, 20);
             this.txtSan.TabIndex = 15;
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Location = new System.Drawing.Point(218, 70);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(44, 23);
+            this.btnCopy.TabIndex = 17;
+            this.btnCopy.Text = "Kopi";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // clipMonMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(642, 217);
+            this.ClientSize = new System.Drawing.Size(625, 216);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.lblSan);
             this.Controls.Add(this.txtSan);
             this.Controls.Add(this.btnDelete);
@@ -296,7 +308,7 @@
             this.MaximizeBox = false;
             this.Name = "clipMonMainForm";
             this.ShowIcon = false;
-            this.Text = "ClipMon 1.2";
+            this.Text = "ClipMon 1.3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.clipMonMainForm_FormClosing);
             this.Load += new System.EventHandler(this.clipMonMain_Load);
             this.Resize += new System.EventHandler(this.clipMonMainForm_Resize);
@@ -335,6 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem getSHAToolStripMenuItem;
         private System.Windows.Forms.Label lblSan;
         private System.Windows.Forms.TextBox txtSan;
+        private System.Windows.Forms.Button btnCopy;
     }
 }
 

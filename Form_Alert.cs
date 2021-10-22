@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,7 +101,7 @@ namespace CustomAlertBoxDemo
             cmd = "";
         }
 
-        public void showAlert(ClipAlert alert)
+        public void showAlert(ClipAlert alert, string data)
         {
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
@@ -124,48 +125,10 @@ namespace CustomAlertBoxDemo
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
 
-            //switch(type)
-            //{
-            //    case enmType.Success:
-            //        this.pictureBox1.Image = Resources.success;
-            //        this.BackColor = Color.SeaGreen;
-            //        break;
-            //    case enmType.Error:
-            //        this.pictureBox1.Image = Resources.error;
-            //        this.BackColor = Color.DarkRed;
-            //        break;
-            //    case enmType.Info:
-            //        this.pictureBox1.Image = Resources.info;
-            //        this.BackColor = Color.RoyalBlue;
-            //        break;
-            //    case enmType.Warning:
-            //        this.pictureBox1.Image = Resources.warning;
-            //        this.BackColor = Color.DarkOrange;
-            //        break;
-            //    case enmType.ClickUp:
-            //        this.pictureBox1.Image = Resources.clickup;
-            //        this.BackColor = Color.RoyalBlue;
-            //        if (!CUApp)
-            //        {
-            //            cmd = clickUpCmd + CmdData;
-            //        } else
-            //        {
-            //            cmd = clickUpHttpCmd + CmdData;
-            //        }
-                    
-            //        break;
-            //    case enmType.HelpDesk:
-            //        this.pictureBox1.Image = Resources.its;
-            //        this.BackColor = Color.DarkRed;
-            //        cmd = helpdeskCmd + CmdData;
-            //        break;
-            //}
-
-
             this.lblMsg.Text = alert.Text;
             this.BackColor = Color.FromArgb(int.Parse(alert.Color));
-            this.pictureBox1.Image = Image.FromFile(alert.Img);
-            cmd = alert.Url;
+            this.pictureBox1.Image = Image.FromFile(Directory.GetCurrentDirectory() + alert.Img);
+            cmd = alert.Url+data;
 
 
             this.Show();

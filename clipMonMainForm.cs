@@ -41,6 +41,15 @@ namespace clipmon
             if (File.Exists(path))
             {
                 Alerters = DeserializeToObject<ClipAlert>(path);
+
+                foreach (var alert in Alerters)
+                {
+                    if (alert.Img.Contains(":"))
+                    {
+                        alert.Img = ConvertFilePathToRelative(alert.Img);
+                    }
+                }
+                
             } 
             else //First start. Create ClipUp and Helpdesk alerts since this is what this program is made to do.
             {
@@ -55,7 +64,7 @@ namespace clipmon
                     Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\imgs\\");
                 }
                 Properties.Resources.clickup.Save(Directory.GetCurrentDirectory() + "\\imgs\\" + "clikcup.png");
-                click.Img = Directory.GetCurrentDirectory() + "\\imgs\\" + "clikcup.png";
+                click.Img = "\\imgs\\" + "clikcup.png";
                 click.Id = Guid.NewGuid();
                 click.RemoveString = "#";
 
@@ -68,7 +77,7 @@ namespace clipmon
                 help.Color = "-8388608";
                 help.Url = "https://helpdesk.itsecurity.dk/Ticket/";
                 Properties.Resources.its.Save(Directory.GetCurrentDirectory() + "\\imgs\\" + "its.png");
-                help.Img = Directory.GetCurrentDirectory() + "\\imgs\\" + "its.png";
+                help.Img = "\\imgs\\" + "its.png";
                 help.Id = Guid.NewGuid();
 
                 Alerters.Add(help);
@@ -91,9 +100,13 @@ namespace clipmon
             bindingSource1.ResetBindings(true);
         }
 
-        private void RefreshItemData()
+        private void RefreshItemData(ClipAlert copy = null)
         {
+            
             var item = (ClipAlert)listAlerters.SelectedItem;
+
+         
+
             if (!string.IsNullOrEmpty(item.Color))
             {
                 cpAlertBG.Color = System.Drawing.Color.FromArgb(int.Parse(item.Color));
@@ -106,9 +119,11 @@ namespace clipmon
             txtUrl.Text = item.Url;
             txtSan.Text = item.RemoveString;
             if (!string.IsNullOrEmpty(item.Img)) { 
-                pbImage.Image = Image.FromFile(item.Img);
-                pbImage.ImageLocation = item.Img;
+                pbImage.Image = Image.FromFile(Directory.GetCurrentDirectory()+ item.Img);
+                pbImage.ImageLocation = Directory.GetCurrentDirectory() + item.Img;
             }
+
+
         }
 
 
@@ -144,8 +159,7 @@ namespace clipmon
                     var regEx = new Regex(alertCheck.ClipRegex);
                     if (regEx.IsMatch(clip))
                     {
-                        alertCheck.Url += !string.IsNullOrEmpty(alertCheck.RemoveString) ? clip.Replace(alertCheck.RemoveString, "") : clip;
-                        Alert(alertCheck);
+                        Alert(alertCheck, !string.IsNullOrEmpty(alertCheck.RemoveString) ? clip.Replace(alertCheck.RemoveString, "") : clip);
                     }
                 }
                 lastAddString = clip;
@@ -157,11 +171,16 @@ namespace clipmon
             RemoveClipboardFormatListener(this.Handle);
         }
 
+        private string ConvertFilePathToRelative(string path)
+        {
+            return path.Substring(path.LastIndexOf("\\imgs\\"), path.Length-path.LastIndexOf("\\imgs\\"));
+        }
 
-        public void Alert(ClipAlert clipAlert)
+
+        public void Alert(ClipAlert clipAlert, string data)
         {
             Form_Alert frm = new Form_Alert();
-            frm.showAlert(clipAlert);
+            frm.showAlert(clipAlert, data);
         }
 
         /// Found on : https://www.fluxbytes.com/csharp/how-to-monitor-for-clipboard-changes-using-addclipboardformatlistener/
@@ -245,7 +264,7 @@ namespace clipmon
             alert.Color = cpAlertBG.Color.ToArgb().ToString();
             
             alert.ClipRegex = txtRegex.Text;
-            alert.Img = pbImage.ImageLocation;
+            alert.Img = pbImage.ImageLocation.Replace(Directory.GetCurrentDirectory(), "");
             alert.RemoveString = txtSan.Text;           
             
             if (alert.Id != null && alert.Id != Guid.Empty)
@@ -348,6 +367,30 @@ namespace clipmon
         {
             Updater up = new Updater();
             MessageBox.Show(up.GetSha(true));
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            
+            if (listAlerters.SelectedItem != null)
+            {
+                var alert = (ClipAlert)listAlerters.SelectedItem;
+                Alerters.Add(copy(alert));
+                refreshData();
+            }
+        }
+
+        private ClipAlert copy(ClipAlert alert)
+        {
+            var nAl = new ClipAlert();
+            nAl.ClipRegex = alert.ClipRegex;
+            nAl.Color = alert.Color;
+            nAl.Id = Guid.NewGuid();
+            nAl.Img = alert.Img;
+            nAl.RemoveString = alert.RemoveString;
+            nAl.Text = alert.Text;
+            nAl.Title = alert.Title;
+            return nAl;
         }
     }
 }

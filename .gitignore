@@ -1,2 +1,10 @@
 
 Updater.cs
+.vs/clipmon/v16/.suo
+*.exe
+bin/Debug/NEW_clipmon.exe
+bin/Debug/clipmon.zip
+bin/Debug/clipmon.txt
+bin/Debug/clipmon.pdb
+bin/Debug/Alerts.xml
+bin/Debug/clipmon.txt
