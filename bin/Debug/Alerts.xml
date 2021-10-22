@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClipAlert xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ClipAlert>
+    <Id>3229e7d4-8924-4f3c-99c3-b79d477b4518</Id>
+    <Title>ClickUp</Title>
+    <Text>Looks like a ClickUp issue</Text>
+    <Url>clickup://app.clickup.com/t/</Url>
+    <ClipRegex>^#?[a-zA-Z0-9]{5,7}$</ClipRegex>
+    <Img>D:\Work\clipmon\bin\Debug\imgs\clikcup.png</Img>
+    <Color>-8388353</Color>
+    <RemoveString>#</RemoveString>
+  </ClipAlert>
+  <ClipAlert>
+    <Id>a861b719-98b5-40fd-9748-f43c24066f98</Id>
+    <Title>Helpdesk</Title>
+    <Text>Looks like a helpdesk ticket</Text>
+    <Url>https://helpdesk.itsecurity.dk/Ticket/</Url>
+    <ClipRegex>^1?[0-9]{7}$</ClipRegex>
+    <Img>D:\Work\clipmon\bin\Debug\imgs\its.png</Img>
+    <Color>-8388608</Color>
+  </ClipAlert>
+</ArrayOfClipAlert>

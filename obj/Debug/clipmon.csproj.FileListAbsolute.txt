@@ -1,0 +1,11 @@
+D:\Work\clipmon\bin\Debug\clipmon.exe.config
+D:\Work\clipmon\bin\Debug\clipmon.exe
+D:\Work\clipmon\bin\Debug\clipmon.pdb
+D:\Work\clipmon\obj\Debug\clipmon.clipMonMainForm.resources
+D:\Work\clipmon\obj\Debug\clipmon.Properties.Resources.resources
+D:\Work\clipmon\obj\Debug\clipmon.csproj.GenerateResource.cache
+D:\Work\clipmon\obj\Debug\clipmon.csproj.CoreCompileInputs.cache
+D:\Work\clipmon\obj\Debug\clipmon.exe
+D:\Work\clipmon\obj\Debug\clipmon.pdb
+D:\Work\clipmon\obj\Debug\CustomAlertBoxDemo.Form_Alert.resources
+D:\Work\clipmon\obj\Debug\clipmon.csproj.AssemblyReference.cache
